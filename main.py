@@ -152,5 +152,3 @@ for i, card in enumerate(poker_calculator.deck):
 if st.button('Reset'):
     st.session_state.selected_cards = []
     st.experimental_rerun()
-
-
