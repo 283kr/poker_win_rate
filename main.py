@@ -112,7 +112,7 @@ def card_emoji(card):
 
 # Streamlit App
 
-st.title("Poker Odds Calculator")
+st.title("포커 확률 계산기 (핸드폰이면 가로로 회전 시켜 쓰세요")
 
 poker_calculator = PokerOddsCalculator()
 
