@@ -138,11 +138,11 @@ for i, card in enumerate(poker_calculator.deck):
     col = cols[i % 13]
     card_label = card_emoji(card)
     if card in st.session_state.selected_cards:
-        if col.button(f"✅ {card_label}", key=card, use_container_width=True):
+        if col.button(f"✅ {card_label}", key=f"remove_{card}", use_container_width=True):
             st.session_state.selected_cards.remove(card)
             st.experimental_rerun()
     else:
-        if col.button(card_label, key=card, use_container_width=True):
+        if col.button(card_label, key=f"add_{card}", use_container_width=True):
             if len(st.session_state.selected_cards) < 7:
                 st.session_state.selected_cards.append(card)
                 st.experimental_rerun()
