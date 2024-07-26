@@ -140,15 +140,15 @@ for i, card in enumerate(poker_calculator.deck):
     if card in st.session_state.selected_cards:
         if col.button(f"✅ {card_label}", key=f"remove_{card}", use_container_width=True):
             st.session_state.selected_cards.remove(card)
-            st.experimental_rerun()
+            st.rerun()
     else:
         if col.button(card_label, key=f"add_{card}", use_container_width=True):
             if len(st.session_state.selected_cards) < 7:
                 st.session_state.selected_cards.append(card)
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.warning("You can only select up to 7 cards.")
 
 if st.button('Reset'):
     st.session_state.selected_cards = []
-    st.experimental_rerun()
+    st.rerun()
